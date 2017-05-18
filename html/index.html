@@ -5,14 +5,6 @@
 
     <title>Title</title>
 
-    <script type="text/javascript">
-
-        var textIdP = document.getElementById("textIdP");
-        alert(document.getElementsByTagName("p").length);
-        alert(typeof textIdP);
-
-    </script>
-
     <style>
         .textP {
             font-style: italic;
@@ -22,10 +14,24 @@
             color: #FF0000;
         }
     </style>
+
+    <!--<script src="../js/index.js"></script>-->
 </head>
 <body>
 
-    <p id="textIdP" class="textP">my name is ifmvo.</p>
+    <p title="i am a title" id="textIdP" class="textP">my name is ifmvo.</p>
+    <p title="i am a title2" id="textIdP2" class="textP">my name is ifmvo2.</p>
 
+    <script>
+        var pList = document.getElementsByTagName("p");
+        alert(pList.length);
+
+        for (var i=0; i<pList.length; i++){
+            var title = pList[i].getAttribute("title");
+            if (title != null){
+                alert(title);
+            }
+        }
+    </script>
 </body>
 </html>
